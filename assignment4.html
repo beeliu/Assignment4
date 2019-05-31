@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Page Title</title>
+  <title>Page Title</title>
+  <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <link rel="stylesheet" type="text/css" media="screen" href="assignment4.css">
 </head>
 <body>
   <div class = "flex-container">
     <!-- Drop down menu and form -->
     <div class = "dropdown_color">
-      Color:  
+      Color:
       <select>
         <option value="pink">Pink</option>
         <option value="blue">Blue</option>
@@ -18,17 +21,29 @@
     <div class = "grid_form">
         <form>
             Grid Length:<br>
-            <input type="number" name="length">
+            <input type="number" id="row" name="length" min="0">
             <br>
             Grid Width:<br>
-            <input type="number" name="width">
+            <input type="number"  id="column" name="width"  min="0">
             <br><br>
             <input type="submit" value="Submit">
         </form>
 
     </div>
-  </div>  
-    <div class = "grid-container">
-    </div> 
+  </div>
+    <table id="colorTable">
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  </table>
+
+    <script src="assignment4.js"></script
 </body>
 </html>
