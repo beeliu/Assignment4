@@ -7,9 +7,9 @@
 /*function to add rows */
 function addRows(table,row){
   for(let i = 0; i<row; i++){
-     let trow = table.insertRow(i);
+     let trow = table.insertRow(0);
      for(let j =0; j< table.rows[1].cells.length; j++){
-            trow.insertCell(j);
+            trow.insertCell(0);
     }
 }
 }
@@ -24,15 +24,17 @@ function addCols(table,column){
   }
 }
 
-/*function to add rows and columns when both are > 0 */
+/*
+/*function to add rows and columns when both are > 0
 function addRowsCol(table, row, column){
+  // add columns first then add the add rows
   for(let i = 0; i<row; i++){
     trow = table.insertRow(i);
     for(let j = 0; j<column; j++){
-      trow.insertCell(j);
+      trow.insertCell(0);
     }
   }
-}
+} */
 
 /*function to delete rows */
 function deleteRows(table,row){
@@ -44,9 +46,11 @@ function deleteRows(table,row){
 
 /*function to delete columns*/
 function deleteCols(table, column){
-  for(let i = column ; i< 0; i++){
-    for(let j = 0; j<table.rows.length; j++){
-          table.rows[j].deleteCell(0);
+  for(let i = 0; i< table.rows.length; i ++){
+    /*column should be a negative number*/
+    for(let j = column; j< 0; j++){
+      table.rows[i].deleteCell(j*-1);
+      console.log( "j:" + j*-1);
     }
   }
 }
@@ -70,13 +74,15 @@ function modifyGrid(event){
 
 /*logic of evaluations */
 if ( row > 0 && column > 0){
-    addRowsCol(table,row, column);
+  /*  addRowsCol(table,row, column);*/
+  addCols(table,column);
+  addRows(table,row);
 
 }
 
 else if (row < 0 && column < 0){
   /* delete cells */
-    deleteRow(table,row);
+    deleteRows(table,row);
     deleteCols(table,column);
 }
 
