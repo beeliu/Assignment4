@@ -18,29 +18,19 @@
         <option value="green">Green</option>
       </select>
     </div>
-    <div class = "grid_form">
-        <form>
-            Grid Length:<br>
-            <input type="number" id="row" name="length" min="0">
-            <br>
-            Grid Width:<br>
-            <input type="number"  id="column" name="width"  min="0">
-            <br><br>
-            <input type="submit" value="Submit">
+    <div class= "grid_form">
+        <form id="Form">
+            Grid Length:
+            <input type="number" id="row" name="length" onFocus="this.name= this.value" min=0 value=1 >
+            Grid Width:
+            <input type="number" id="column" name="width"  onFocus="this.name= this.value" min=0 value=0 >
+            <input type="submit" id="submit" value="Submit">
         </form>
 
     </div>
   </div>
-    <table id="colorTable">
+    <table id="Table">
   <tr>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td></td>
-    <td></td>
-    <td></td>
   </tr>
   </table>
 
