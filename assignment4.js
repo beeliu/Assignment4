@@ -44,10 +44,9 @@ function deleteRows(table,row){
 
 /*function to delete columns*/
 function deleteCols(table, column){
-  for(let i = 0; i< table.rows.length; i ++){
-    /*column should be a negative number*/
-    for(let j = column; j< 0; j++){
-      table.rows[i].deleteCell(j);
+  for(let i = column ; i< 0; i++){
+    for(let j = 0; j<table.rows.length; j++){
+          table.rows[j].deleteCell(0);
     }
   }
 }
