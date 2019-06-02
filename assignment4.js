@@ -1,15 +1,16 @@
 // javascript file
+let newID = 1;
+
+/*function to add event listener to each cell in grid */
 
 /* the following function create table on Submit see event listener below functions */
-
-/*function to add rows and columns */
-
 /*function to add rows */
 function addRows(table,row){
   for(let i = 0; i<row; i++){
      let trow = table.insertRow(0);
      for(let j =0; j< table.rows[1].cells.length; j++){
-            trow.insertCell(0);
+        let cell = trow.insertCell(0);
+        cell.setAttribute("id",newID);
     }
 }
 }
@@ -17,24 +18,17 @@ function addRows(table,row){
 /*function to add columns */
 function addCols(table,column){
   for(let i=0; i<column; i++){
-    table.rows[0].insertCell(0);
+    let rcell = table.rows[0].insertCell(0);
+    rcell.setAttribute("id",newID);
     for(let j = 1; j< table.rows.length; j++){
-          table.rows[j].insertCell(0);
+        let cell =  table.rows[j].insertCell(0);
+          cell.setAttribute("id",newID);
+
     }
   }
 }
 
-/*
-/*function to add rows and columns when both are > 0
-function addRowsCol(table, row, column){
-  // add columns first then add the add rows
-  for(let i = 0; i<row; i++){
-    trow = table.insertRow(i);
-    for(let j = 0; j<column; j++){
-      trow.insertCell(0);
-    }
-  }
-} */
+
 
 /*function to delete rows */
 function deleteRows(table,row){
@@ -48,9 +42,8 @@ function deleteRows(table,row){
 function deleteCols(table, column){
   for(let i = 0; i< table.rows.length; i ++){
     /*column should be a negative number*/
-    for(let j = column; j< 0; j++){
-      table.rows[i].deleteCell(j*-1);
-      console.log( "j:" + j*-1);
+    for(let j = column; j<0; j++){
+      table.rows[i].deleteCell(0);
     }
   }
 }
@@ -120,7 +113,7 @@ else{
 
 }
 
-
+/*event listener for changes in form*/
 
 let submission = document.getElementById('Form');
 submission.addEventListener("submit",modifyGrid);
