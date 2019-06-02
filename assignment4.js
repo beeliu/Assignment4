@@ -11,7 +11,8 @@ function addRows(table,row){
      for(let j =0; j< table.rows[1].cells.length; j++){
         let cell = trow.insertCell(0);
         cell.setAttribute("id",newID);
-    }
+        newID++;
+      }
 }
 }
 
@@ -20,10 +21,11 @@ function addCols(table,column){
   for(let i=0; i<column; i++){
     let rcell = table.rows[0].insertCell(0);
     rcell.setAttribute("id",newID);
+    newID++;
     for(let j = 1; j< table.rows.length; j++){
         let cell =  table.rows[j].insertCell(0);
           cell.setAttribute("id",newID);
-
+          newID++;
     }
   }
 }
