@@ -1,15 +1,23 @@
-// css file
+/* css file */
+
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
 body {
-  margin: 0 auto;
+  font-family: 'Montserrat', sans-serif;
+  max-width: 1200px; 
+  margin: 0 auto; 
+  position: relative;
+  color: #ffffff;
+  background: #2e242c;
 }
+
 
 
 table {
   display: flex;
   justify-content: center;
   border-spacing: 0;
-  border: 1px solid black;
-  background: #000000;
 }
 
 
@@ -20,7 +28,23 @@ td{
   text-align: center;
 }
 
-#Form{
+.flex-container{
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  border-bottom: 2px  solid  #ffffff;
+  padding: 20px;
 }
+
+.dropdown_color, #Form, :double-button { 
+  padding: 5px;
+}
+
+button, select{
+  font-family: 'Montserrat', sans-serif;
+  background-color: #e8f4f8;
+}
+
+input[type="submit"]{
+  background-color: #e8f4f8;
+}
+
