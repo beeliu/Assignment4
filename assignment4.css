@@ -1,1 +1,26 @@
 // css file
+body {
+  margin: 0 auto;
+}
+
+
+table {
+  display: flex;
+  justify-content: center;
+  border-spacing: 0;
+  border: 1px solid black;
+  background: #000000;
+}
+
+
+td{
+  background-color:#D3D3D3;
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding:20px; 
+  text-align: center;
+}
+
+#Form{
+  display: flex;
+  justify-content: space-around;
+}

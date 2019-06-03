@@ -1,34 +1,47 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Page Title</title>
+  <title>Page Title</title>
+  <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <link rel="stylesheet" type="text/css" media="screen" href="assignment4.css">
 </head>
 <body>
   <div class = "flex-container">
     <!-- Drop down menu and form -->
     <div class = "dropdown_color">
-      Color:  
-      <select>
+      Color:
+      <select id = "selectColor">
         <option value="pink">Pink</option>
         <option value="blue">Blue</option>
         <option value="yellow">Yellow</option>
         <option value="green">Green</option>
       </select>
+      <button id = "pickColor" type = "button">pick color</button>
     </div>
-    <div class = "grid_form">
-        <form>
-            Grid Length:<br>
-            <input type="number" name="length">
-            <br>
-            Grid Width:<br>
-            <input type="number" name="width">
-            <br><br>
-            <input type="submit" value="Submit">
+    <div class= "grid_form">
+        <form id="Form">
+            Grid Length:
+            <input type="number" id="row" name="length" onFocus="this.name= this.value" min=1 value=1 >
+            Grid Width:
+            <input type="number" id="column" name="width"  onFocus="this.name= this.value" min=0 value=0 >
+            <input type="submit" id="submit" value="Submit">
         </form>
+        <button id = "addRow" type="button">add row</button>
+        <button id = "addCol" type="button">add column</button>
+        <button id = "removeRow" type="button">remove row</button>
+        <button id = "removeCol" type="button">remove column</button>
+        <button id = "fillUncolored" type="button">fill all uncolored cells</button>
+        <button id = "fillAll" type="button">fill all cells</button>
+        <button id = "clearAll" type="button">clear all cells</button>
 
     </div>
-  </div>  
-    <div class = "grid-container">
-    </div> 
+  </div>
+    <table id="Table">
+  <tr>
+  </tr>
+  </table>
 </body>
+<script src="assignment4.js"></script>
+
 </html>
